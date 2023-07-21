@@ -40,38 +40,42 @@ router.post('/registration', async (req, res) => {
   }
 });
 
-router.post('/login', async(req,res)=>{
-    try{
-        const {email, password} = req.body;
-        const alreadyUser = await Users.findOne({email});
-        if(!alreadyUser){
-            res.status(402).send("There is no User with such email");
-        }
-        if(alreadyUser && (await bcrypt.compare(password, alreadyUser.password))){
-            const token = jwt.sign(
-                {email: alreadyUser.email},
-                process.env.SECRET_KEY,
-                {expiresIn: '2h'}
-                )
+router.post('/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const alreadyUser = await Users.findOne({ email });
 
-                const options = {
-                    expires: new Date(Date.now() + 2 * 60 * 60 * 1000),
-                    httpOnly: true
-                }
-
-                res.status(200).cookie("token", token, options)
-                .json({
-                    success: true,
-                    token: token
-                })
-        }
-        else{
-            return res.status(400).send("Invalid Password")
-        }
+    if (!alreadyUser) {
+      return res.status(402).send("There is no User with such email");
     }
-    catch(e){
-        console.error(e)
-    }
-})
 
+    const isPasswordValid = await bcrypt.compare(password, alreadyUser.password);
+
+    if (isPasswordValid) {
+      const token = jwt.sign(
+        { email: alreadyUser.email },
+        process.env.SECRET_KEY,
+        { expiresIn: '2h' }
+      );
+
+      const uname = alreadyUser.uname;
+
+      const options = {
+        expires: new Date(Date.now() + 2 * 60 * 60 * 1000),
+        httpOnly: true
+      };
+
+      return res.status(200).cookie("token", token, options).json({
+        success: true,
+        token: token,
+        uname: uname
+      });
+    } else {
+      return res.status(400).send("Invalid Password");
+    }
+  } catch (e) {
+    console.error(e);
+    return res.status(500).send("Internal Server Error");
+  }
+});
 module.exports = router;

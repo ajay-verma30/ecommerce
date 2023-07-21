@@ -1,0 +1,38 @@
+body{
+    background: rgb(249, 241, 241);
+}
+
+.sidebar{
+    height: 100vh;
+    background-color: azure;
+}
+
+li{
+    text-decoration: none;
+    list-style-type: none;
+
+}
+
+.menu-start{
+ margin-top: 20px;
+ font-size: 1em;
+ padding: 5px;
+ cursor: pointer;
+ border-bottom: 1px solid grey;
+}
+
+.menu-start:hover{
+    color: grey;
+}
+
+.menu:hover{
+    color: grey;
+}
+
+.menu{
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 1em;
+    border-bottom: 1px solid grey;
+}

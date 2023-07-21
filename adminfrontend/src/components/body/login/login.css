@@ -1,0 +1,25 @@
+body{
+    overflow-x: hidden !important;
+    padding: 0px;
+    margin: 0px;
+    background: url('../../../../public/assets/images/background.jpg');
+}
+
+@media (min-width:1124px){
+    form{
+        color: white;
+        width: 40%;
+        margin: auto;
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 20px;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8));
+    }
+    button{
+        margin-top: 15px !important;
+    }
+}
