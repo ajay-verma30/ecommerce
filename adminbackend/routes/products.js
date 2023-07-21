@@ -1,9 +1,26 @@
 const express = require('express');
 const router = express.Router();
+const Products = require('../models/products');
 
 
-router.get('/', (req,res)=>{
-    res.send('working on products');
+router.post('/newproduct', async(req,res)=>{
+    try{
+        const {pname, pcategory, pprice, pdescription, pquantity} = req.body;
+        const padded = Date.now();
+        const newProduct = new Products({
+            pname,
+            pcategory,
+            pprice,
+            pdescription,
+            pquantity,
+            addedAt: padded
+        });
+        await newProduct.save();
+        res.status(201).send('product added successfully');
+    }
+    catch(e){
+        console.error(e)
+    }
 })
 
 

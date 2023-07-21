@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 // import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
+import { Link } from 'react-router-dom'
 import Navigation from "../../header/navbar";
 require('./dashboard.css')
 
@@ -20,7 +21,7 @@ const Dashboard = () => {
                    <Container>
                     <ul>
                         <li className='menu-start'><FontAwesomeIcon icon={faTableColumns} /> Dashboard</li>
-                        <li className='menu'><FontAwesomeIcon icon={faWarehouse} /> Inventory </li>
+                        <li className='menu'><FontAwesomeIcon icon={faWarehouse} /><Link to='/addinventory'> Inventory</Link> </li>
                         <li className='menu'><FontAwesomeIcon icon={faUsers} /> Users </li>
                         <li className='menu'><FontAwesomeIcon icon={faComment} /> Reviews </li>
                     </ul>
