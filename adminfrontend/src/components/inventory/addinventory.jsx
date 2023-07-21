@@ -4,15 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Navigation from '../header/navbar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTableColumns } from '@fortawesome/free-solid-svg-icons'
-import { faUsers } from '@fortawesome/free-solid-svg-icons'
-import { faWarehouse } from '@fortawesome/free-solid-svg-icons'
-import { faComment } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
-import Container from "react-bootstrap/Container";
+
 import ProductPreview from './productPreview';
 import axios from 'axios';
+import Sidenavbar from '../body/sidenavbar/sidenavbar';
 require('./inventory.css')
 
 
@@ -46,14 +41,7 @@ const AddInventory = () => {
       <Navigation/>
     <Row>
       <Col md={2} className='sidebar'>
-      <Container>
-                    <ul>
-                        <li className='menu-start'><FontAwesomeIcon icon={faTableColumns} /> Dashboard</li>
-                        <li className='menu'><FontAwesomeIcon icon={faWarehouse} /><Link to='/addinventory'> Inventory</Link> </li>
-                        <li className='menu'><FontAwesomeIcon icon={faUsers} /> Users </li>
-                        <li className='menu'><FontAwesomeIcon icon={faComment} /> Reviews </li>
-                    </ul>
-                    </Container>
+      <Sidenavbar/>
       </Col>
       <Col md={4} className='addinventory'>
       <h4 className='text-center'>Add Inventory</h4>
@@ -98,7 +86,7 @@ const AddInventory = () => {
         <Button type="submit" className="btn btn-primary" >Add Inventory</Button>
       </Form>
       </Col>
-      <Col md={6}>
+      <Col md={6} className='preview'>
         <h4 className='text-center'>Preview</h4>
         <ProductPreview pName={pName} pPrice={pPrice} pdescription={pdescription} pcategory={pcategory} scategory={scategory} pQunatity={pQunatity}/>
       </Col>
