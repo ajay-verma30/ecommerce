@@ -1,0 +1,4 @@
+This is an on going react ecommerce project. 
+
+Packages installed for backend are nodemon, express, cors, jsonwebtoken, cookie-parser and mongoose. Whereas for the backend I am using bootstrap, axios and fontawesome.
+  
