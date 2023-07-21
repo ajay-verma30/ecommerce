@@ -20,9 +20,9 @@ const Dashboard = () => {
                    <Container>
                     <ul>
                         <li className='menu-start'><FontAwesomeIcon icon={faTableColumns} /> Dashboard</li>
-                        <li className='menu'><FontAwesomeIcon icon={faWarehouse} /> INVENTORY </li>
-                        <li className='menu'><FontAwesomeIcon icon={faUsers} /> USERS </li>
-                        <li className='menu'><FontAwesomeIcon icon={faComment} /> REVIEWS </li>
+                        <li className='menu'><FontAwesomeIcon icon={faWarehouse} /> Inventory </li>
+                        <li className='menu'><FontAwesomeIcon icon={faUsers} /> Users </li>
+                        <li className='menu'><FontAwesomeIcon icon={faComment} /> Reviews </li>
                     </ul>
                     </Container> 
                 </Col>
