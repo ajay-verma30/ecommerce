@@ -12,7 +12,11 @@ import { faComment } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import Container from "react-bootstrap/Container";
 import ProductPreview from './productPreview';
+import axios from 'axios';
 require('./inventory.css')
+
+
+
 
 const AddInventory = () => {
   const category = ['Mens', 'Womens', 'Kids'];
@@ -25,7 +29,17 @@ const AddInventory = () => {
   const [pdescription, setpDescription] = useState('');
   const [pQunatity, setQuantity] = useState('');
 
+  const handleSubmit = async(e) =>{
+    e.preventDefault();
+    const response = await axios.post('http://localhost:3000/products/newproduct', {
+      pname: pName, pdescription: pdescription, pcategory,scategory,pprice: pPrice,pquantity:pQunatity});
+    
+    alertMessage();
+  }
 
+  const alertMessage = () =>{
+    alert('Product has been added to the inventory successfully!')
+  }
 
   return (
     <div>
@@ -43,7 +57,7 @@ const AddInventory = () => {
       </Col>
       <Col md={4} className='addinventory'>
       <h4 className='text-center'>Add Inventory</h4>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Group>
           <Form.Label htmlFor='pname'>Product Name</Form.Label>
           <Form.Control type='text' id='pname' value={pName} onChange={(e)=> setPname(e.target.value)} placeholder='Product Name' />
@@ -81,7 +95,7 @@ const AddInventory = () => {
           <Form.Label htmlFor='pquantity'>Product Quantityy</Form.Label>
           <Form.Control type="number" value={pQunatity} onChange={(e)=> setQuantity(e.target.value)} placeholder='Product Quantity Available'/>
         </Form.Group>
-        <Button type="submit" className="btn btn-primary">Add Inventory</Button>
+        <Button type="submit" className="btn btn-primary" >Add Inventory</Button>
       </Form>
       </Col>
       <Col md={6}>
