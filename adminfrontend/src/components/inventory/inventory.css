@@ -6,3 +6,48 @@
 .preview{
     padding: 30px;
 }
+
+.editicon{
+    cursor: pointer;
+
+}
+
+.editicon:hover{
+    color: grey;
+}
+
+.searchbox{
+    margin: 20px;
+}
+
+.card{
+    justify-content: center;   
+    margin: 20px;
+    height: 150px !important;
+    box-shadow: 2px 5px 5px grey;
+    border: 2px solid grey;
+}
+
+.card-title{
+    font-size: 2em !important;
+}
+
+.icons{
+    padding: 15px;
+    border-radius: 100%;
+    position: relative;
+    top: -15px;
+    left: 45px;
+}
+
+.stockicon{
+    background-color: orange;
+}
+
+.categoryicon{
+    background-color: rgb(156, 208, 78);
+}
+
+.saleicon{
+    background-color: rgb(255, 219, 57);
+}

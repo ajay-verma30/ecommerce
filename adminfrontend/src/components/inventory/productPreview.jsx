@@ -1,22 +1,14 @@
 import React from 'react'
-import Container from 'react-bootstrap/Container'
-import Card from 'react-bootstrap/Card'
 
 const ProductPreview = ({pName, pPrice, pdescription, pcategory, scategory, pQunatity}) => {
   return (
     <div>
-      <Container>
-        <Card>
-            <Card.Title className='text-center'>Product Name: {pName}</Card.Title>
-            <Card.Body>
-                <Card.Text>Product Description: {pdescription}</Card.Text>
-                <Card.Text>Category: {pcategory}</Card.Text>
-                <Card.Text>Sub Category: {scategory}</Card.Text>
-                <Card.Text>Product Price: {pPrice}</Card.Text>
-                <Card.Text>Number of Stock Available: {pQunatity}</Card.Text>
-            </Card.Body>
-        </Card>
-      </Container>
+            <h2 className='text-center'>Product Name: {pName}</h2>
+                <h6>Product Description: {pdescription}</h6>
+                <h6>Category: {pcategory}</h6>
+                <h6>Sub Category: {scategory}</h6>
+                <h6>Product Price: {pPrice}</h6>
+                <h6>Number of Stock Available: {pQunatity}</h6>
     </div>
   )
 }

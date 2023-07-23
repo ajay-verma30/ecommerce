@@ -17,7 +17,7 @@ const handleLogout = () =>{
 
     return(
       <>
-        <Navbar className="bg-body-tertiary">
+        <Navbar className="navbar-dark bg-dark">
       <Container>
         <Navbar.Brand href="#home">ADMIN</Navbar.Brand>
         <Navbar.Toggle />

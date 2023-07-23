@@ -29,6 +29,9 @@ const productSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    salePrice:{
+        type: Number
+    },
     addedAt: {
         type: Date,
         required: true

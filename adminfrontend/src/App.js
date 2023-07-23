@@ -4,6 +4,8 @@ import Login from './components/body/login/login';
 import Dashboard from './components/body/dashboard/dashboard';
 import PrivateRoutes from './utils/PrivateRoutes';
 import AddInventory from './components/inventory/addinventory';
+import EditProduct from './components/inventory/editProduct';
+import Inventory from './components/inventory/inventory';
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
       <Routes>
         <Route element={<PrivateRoutes/>}>
           <Route element={<Dashboard/>} path='/dashboard'/>
-          <Route element={<AddInventory/>} path='/addinventory'/>
+          <Route element={<AddInventory/>} path='/inventory/addinventory'/>
+          <Route element={<EditProduct/>} path='/inventory/editinventory'/>
+          <Route element={<Inventory/>} path='/inventory'/>
         </Route>
         <Route path='/login' element={<Login/>}></Route>
       </Routes>

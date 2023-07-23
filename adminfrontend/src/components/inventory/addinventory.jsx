@@ -14,11 +14,11 @@ require('./inventory.css')
 
 
 const AddInventory = () => {
-  const category = ['Mens', 'Womens', 'Kids'];
-  const subCategory = ['Tops', 'Bottoms', 'innerwear', 'footwear'];
+  const category = ['Mens', 'Womens', 'Kids', 'Electronics', 'Home'];
+  const subCategory = ['Tops', 'Bottoms', 'innerwear', 'footwear', 'Printer', 'Mobiles', 'Tables', 'Cupboards','Others'];
 
-  const [pcategory, setpCategory] = useState();
-  const [scategory, setsCategory] = useState();
+  const [pcategory, setpCategory] = useState(category[0]);
+  const [scategory, setsCategory] = useState(subCategory[0]);
   const [pName, setPname] = useState('');
   const [pPrice, setPprice] = useState('');
   const [pdescription, setpDescription] = useState('');
@@ -26,7 +26,7 @@ const AddInventory = () => {
 
   const handleSubmit = async(e) =>{
     e.preventDefault();
-    const response = await axios.post('http://localhost:3000/products/newproduct', {
+    await axios.post('http://localhost:3000/products/newproduct', {
       pname: pName, pdescription: pdescription, pcategory,scategory,pprice: pPrice,pquantity:pQunatity});
     
     alertMessage();
