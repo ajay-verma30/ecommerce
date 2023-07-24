@@ -33,7 +33,7 @@ const EditProduct = () => {
     const fetchProducts = async () => {
         const response = await axios.get('http://localhost:3000/products/inventory');
         const resproducts = response.data;
-        setProducts(resproducts);
+        setProducts(resproducts.reverse());
     }
 
     const handleOpenModal = (products) => {

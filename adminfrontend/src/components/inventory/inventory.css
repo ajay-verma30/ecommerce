@@ -51,3 +51,12 @@
 .saleicon{
     background-color: rgb(255, 219, 57);
 }
+
+
+.graphContainer{
+    border-radius: 10px;
+}
+
+.recentlyAdded{
+    padding: 10px;
+}
