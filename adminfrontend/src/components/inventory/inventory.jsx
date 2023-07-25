@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBoxesStacked, faFolderTree, faHandHoldingDollar } from '@fortawesome/free-solid-svg-icons';
 import Barchart from '../charts/barchart';
 import Table from 'react-bootstrap/Table';
-
+import { Link } from 'react-router-dom';
 require('./inventory.css');
 
 const Inventory = () => {
@@ -117,7 +117,7 @@ const Inventory = () => {
                   <Barchart categoryCount={categoryCount}/>
               </Col>
               <Col md={4}>
-                <h5 className='text-center recentlyAdded'>Recently Added Products</h5>
+                <h5 className='text-center'><Link to='/inventory/editinventory' className='recentlyAdded'>Recently Added Products</Link></h5>
                 <Table  bordered hover>
                   <thead>
                     <th>Product Name</th>
